@@ -1,59 +1,49 @@
-# Weather-Based Taylor Swift Playlist Generator
-## Project Description
-This project creates a unique Taylor Swift playlist based on the current weather in a specified city. It combines data from two APIs:
-1. OpenWeatherMap API: To fetch current weather data for a given city.
-2. Spotify API: To access Taylor Swift's discography and create personalized playlists.
-The application determines a "mood" based on the weather conditions and selects Taylor Swift songs that match this mood. It then creates a Spotify playlist with these songs.
+# Nepali Politics Sentiment Analyzer
+
+This project is designed to analyze the sentiment expressed in Nepali news articles about specific political figures. It focuses on scraping articles from the "Politics" section of the MyRepublica news website ([https://myrepublica.nagariknetwork.com](https://myrepublica.nagariknetwork.com)).
+
 ## Features
-- Fetches real-time weather data for any city
-- Determines a mood based on weather conditions
-- Selects Taylor Swift songs that match the mood
-- Creates a Spotify playlist with the selected songs
-- Provides links to listen to the created playlist
-## APIs Used
-1. **OpenWeatherMap API**: Chosen for its comprehensive and accurate weather data. It allows us to get current weather conditions for any city worldwide.
-2. **Spotify API**: Selected for its extensive music database and playlist creation capabilities. It provides access to Taylor Swift's complete discography and allows for programmatic playlist creation.
-## Setup Instructions
-### 1. Google Colab Setup
-- Open the provided Google Colab notebook.
-### 2. API Keys Setup
-#### OpenWeatherMap API
-1. Go to [OpenWeatherMap](https://openweathermap.org/) and sign up for a free account.
-2. Once logged in, go to your API keys section and copy your API key.
-#### Spotify API
-1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and log in or create an account.
-2. Click "Create An App" and fill in the app details.
-3. In your app's settings, add `https://example.com/callback` as a Redirect URI.
-4. Note down the Client ID and Client Secret.
-### 3. Adding Secrets to Google Colab
-1. In your Google Colab notebook, click on the folder icon on the left sidebar.
-2. Click on the "Secret" tab (key icon).
-3. Add the following secrets:
-   - `WEATHER_API_KEY`: Your OpenWeatherMap API key
-   - `SPOTIFY_CLIENT_ID`: Your Spotify Client ID
-   - `SPOTIFY_CLIENT_SECRET`: Your Spotify Client Secret
-## Usage Instructions
-1. Run the first code cell to install required libraries:
-   ```
-   !pip install requests spotipy
-   ```
-2. Run the main code cell containing the entire script.
-3. When prompted, enter a city name.
-4. The script will display a Spotify authorization URL. Open this URL in a new tab.
-5. Log in to Spotify and authorize the application.
-6. After authorization, you'll be redirected to a page (which may show an error). Copy the entire URL of this page.
-7. Return to the Colab notebook and paste the copied URL when prompted.
-8. The script will create the playlist and provide a link to it on Spotify.
-## Error Handling and Rate Limits
-- The script includes error handling for API requests and authentication processes.
-- It respects the rate limits of both APIs to ensure smooth operation.
-## Future Improvements
-- Implement caching for weather data to reduce API calls
-- Expand the mood-matching algorithm for more nuanced playlist creation
-- Add support for other artists or genres
-## Contributors
-- Shayan Ahmad
-- Ian Chen
-- Jessica Yu
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+- **Web Scraping:** The script employs `requests` to fetch web pages and `BeautifulSoup` to parse the HTML content. It extracts the following information from each article:
+    - Title
+    - Link
+    - Date
+    - Content
+- **Sentiment Analysis:** The project utilizes `TextBlob`, a natural language processing library, to determine the sentiment polarity of each article's content. The sentiment is classified as:
+    - Positive
+    - Negative
+    - Neutral
+- **Data Storage:**  The scraped articles are organized into a Pandas DataFrame and saved as a CSV file (`myrepublica_politics_articles.csv`) for easy access and further analysis.
+- **Person-Specific Analysis:** The script allows users to input the last name of a political figure. It then filters the articles to include only those mentioning the specified individual and performs sentiment analysis on those articles.
+
+## Libraries Used
+
+- `requests`: For fetching web pages.
+- `beautifulsoup4`: For parsing HTML content.
+- `pandas`: For data manipulation and storage.
+- `urllib3`: For managing HTTP connections.
+- `textblob`: For natural language processing and sentiment analysis.
+
+## How to Run
+
+1.  **Install Libraries:** Make sure you have the necessary libraries installed. You can install them using pip: "bash pip install beautifulsoup4 requests pandas urllib3 textblob"
+2.  **Run the Code:** Execute the Python script in a Jupyter Notebook (Google Colab is recommended) or a similar environment.
+3.  **Enter Name:** The script will prompt you to enter the last name of the politician you want to analyze.
+4.  **View Results:** The script will display the sentiment analysis results for the articles mentioning the specified politician. Each result will include:
+    - Title of the article
+    - Link to the article
+    - Date of publication
+    - Sentiment (Positive, Negative, or Neutral)
+
+## Disclaimer
+
+- This project is intended for educational and research purposes only.
+- Please respect the terms of service of MyRepublica and any other websites you scrape.
+- Sentiment analysis is not always accurate and should be considered an approximation. The results should be interpreted with caution.
+
+## Potential Improvements
+
+- **Enhanced Scraping:** Implement more robust scraping techniques to handle potential changes in website structure.
+- **Advanced Sentiment Analysis:** Explore more sophisticated sentiment analysis models and techniques for improved accuracy.
+- **Named Entity Recognition:** Integrate NER to identify and analyze sentiment towards specific entities mentioned in the articles.
+- **Data Visualization:** Create visualizations to represent the sentiment analysis results in a more engaging and informative way.
