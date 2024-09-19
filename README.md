@@ -1,6 +1,6 @@
 # Nepali Politics Sentiment Analyzer
 
-This project is designed to analyze the sentiment expressed in Nepali news articles about specific political figures. It focuses on scraping articles from the "Politics" section of the MyRepublica news website ([https://myrepublica.nagariknetwork.com](https://myrepublica.nagariknetwork.com)).
+This project is designed to analyze the sentiment expressed in Nepali news articles about specific political figures. It focuses on scraping articles from the "Politics" section of the MyRepublica news website ([https://myrepublica.nagariknetwork.com](https://myrepublica.nagariknetwork.com)). The MyRepublica news website is a Nepali news outlet.
 
 ## Features
 
@@ -44,6 +44,18 @@ This project is designed to analyze the sentiment expressed in Nepali news artic
 ## Potential Improvements
 
 - **Enhanced Scraping:** Implement more robust scraping techniques to handle potential changes in website structure.
+- **Scraping a Larger Data Set:** Add additional historical articles beyond the first 10 pages of the website.
 - **Advanced Sentiment Analysis:** Explore more sophisticated sentiment analysis models and techniques for improved accuracy.
 - **Named Entity Recognition:** Integrate NER to identify and analyze sentiment towards specific entities mentioned in the articles.
 - **Data Visualization:** Create visualizations to represent the sentiment analysis results in a more engaging and informative way.
+
+## Contributors
+
+- Ian Chen
+- Aabaran Paudel
+- Gemini LOL
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
